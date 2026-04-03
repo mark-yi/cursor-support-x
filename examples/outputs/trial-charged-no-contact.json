@@ -1,0 +1,174 @@
+{
+  "mention": {
+    "id": "trial-charged-no-contact",
+    "text": "@cursorsupport i got charged even though i did the 2 week pro trial. contact sales won't take my gmail. is there any support i can contact?",
+    "authorId": "trialcharged",
+    "authorHandle": "trialcharged",
+    "createdAt": "2026-04-03T20:04:00.000Z",
+    "permalink": "https://x.com/trialcharged/status/trial-charged-no-contact",
+    "conversationId": "trial-charged-no-contact",
+    "inReplyToUserId": null
+  },
+  "triage": {
+    "category": "billing/pricing",
+    "confidence": 0.78,
+    "priority": "high",
+    "needs_human_review": true,
+    "summary": "User reports being charged despite a 2-week Pro trial; this requires account-specific billing/invoice verification. The provided sources cover general billing/proration and overages but do not confirm trial-charge handling, so route to hi@cursor.com."
+  },
+  "suggested_response": "Route to hi@cursor.com for account-specific billing review (trial-charge dispute). Keep the public X reply short; avoid discussing trial policy details without a verified doc/case reference.",
+  "suggested_reply": "Please email hi@cursor.com so the team can review the charge and your trial status for your account. Include the account email and the charge date/time. \n\nPublic support here can’t verify invoice/timeline details.",
+  "sources": [
+    {
+      "title": "Billing and payments",
+      "url": "https://cursor.com/help/account-and-billing/billing",
+      "snippet": "at per team member. When you add a member mid-cycle, you're charged for the remaining time in that period If a member has used credits and is removed, their seat stays occupied until the billing cycle ends Team admins ma...",
+      "relevanceScore": 63.91,
+      "relevanceReason": "Semantic match plus terms: charged, billing, charge.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Manage your team",
+      "url": "https://cursor.com/help/account-and-billing/teams-management",
+      "snippet": "email addresses of the people you want to add New seats are prorated based on the number of days remaining in the billing cycle. When someone joins a team, any existing individual Pro subscription on their account is aut...",
+      "relevanceScore": 52.37,
+      "relevanceReason": "Semantic match plus terms: pro, any, support, billing.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Usage-based charges",
+      "url": "https://cursor.com/help/account-and-billing/overages",
+      "snippet": "e: The total here can go above the posted minimums ($20 for Pro, $70 for Pro+, $400 for Ultra)....",
+      "relevanceScore": 59.67,
+      "relevanceReason": "Semantic match plus terms: pro, billing.",
+      "sourceType": "pricing"
+    }
+  ],
+  "retrieval_debug": {
+    "rewritten_query": "billing",
+    "retrieval_mode": "hybrid",
+    "semantic_weight": 0.65,
+    "rerank_attempted": true,
+    "rerank_changed_order": true,
+    "top_candidates_before_rerank": [
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "w much is the Enterprise plan? To get a quote, fill out the contact form at cursor.com/contact-sales....",
+        "relevanceScore": 63.93,
+        "relevanceReason": "Semantic match plus terms: contact, sales, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "at per team member. When you add a member mid-cycle, you're charged for the remaining time in that period If a member has used credits and is removed, their seat stays occupied until the billing cycle ends Team admins ma...",
+        "relevanceScore": 63.91,
+        "relevanceReason": "Semantic match plus terms: charged, billing, charge.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "available? Plan Price Included API usage Hobby Free Limited Pro $20/mo $20 Pro+ $60/mo $70 Ultra $200/mo $400 Teams $40/user/mo $20/user Enterprise plans include pooled usage, SCIM provisioning, audit logs, advanced admi...",
+        "relevanceScore": 59.67,
+        "relevanceReason": "Semantic match plus terms: pro, contact, sales, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "e: The total here can go above the posted minimums ($20 for Pro, $70 for Pro+, $400 for Ultra)....",
+        "relevanceScore": 59.67,
+        "relevanceReason": "Semantic match plus terms: pro, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Manage your team",
+        "url": "https://cursor.com/help/account-and-billing/teams-management",
+        "snippet": "email addresses of the people you want to add New seats are prorated based on the number of days remaining in the billing cycle. When someone joins a team, any existing individual Pro subscription on their account is aut...",
+        "relevanceScore": 52.37,
+        "relevanceReason": "Semantic match plus terms: pro, any, support, billing.",
+        "sourceType": "pricing"
+      }
+    ],
+    "top_candidates_after_rerank": [
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "at per team member. When you add a member mid-cycle, you're charged for the remaining time in that period If a member has used credits and is removed, their seat stays occupied until the billing cycle ends Team admins ma...",
+        "relevanceScore": 63.91,
+        "relevanceReason": "Semantic match plus terms: charged, billing, charge.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Manage your team",
+        "url": "https://cursor.com/help/account-and-billing/teams-management",
+        "snippet": "email addresses of the people you want to add New seats are prorated based on the number of days remaining in the billing cycle. When someone joins a team, any existing individual Pro subscription on their account is aut...",
+        "relevanceScore": 52.37,
+        "relevanceReason": "Semantic match plus terms: pro, any, support, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "e: The total here can go above the posted minimums ($20 for Pro, $70 for Pro+, $400 for Ultra)....",
+        "relevanceScore": 59.67,
+        "relevanceReason": "Semantic match plus terms: pro, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "w much is the Enterprise plan? To get a quote, fill out the contact form at cursor.com/contact-sales....",
+        "relevanceScore": 63.93,
+        "relevanceReason": "Semantic match plus terms: contact, sales, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "available? Plan Price Included API usage Hobby Free Limited Pro $20/mo $20 Pro+ $60/mo $70 Ultra $200/mo $400 Teams $40/user/mo $20/user Enterprise plans include pooled usage, SCIM provisioning, audit logs, advanced admi...",
+        "relevanceScore": 59.67,
+        "relevanceReason": "Semantic match plus terms: pro, contact, sales, billing.",
+        "sourceType": "pricing"
+      }
+    ]
+  },
+  "slack_fields": {
+    "new_mention": "@cursorsupport i got charged even though i did the 2 week pro trial. contact sales won't take my gmail. is there any support i can contact?",
+    "suggested_response": "Route to hi@cursor.com for account-specific billing review (trial-charge dispute). Keep the public X reply short; avoid discussing trial policy details without a verified doc/case reference.",
+    "suggested_reply": "Please email hi@cursor.com so the team can review the charge and your trial status for your account. Include the account email and the charge date/time. \n\nPublic support here can’t verify invoice/timeline details.",
+    "link_to_post": "https://x.com/trialcharged/status/trial-charged-no-contact",
+    "sources": "https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/teams-management, https://cursor.com/help/account-and-billing/overages"
+  },
+  "slack_message": "new mention: @cursorsupport i got charged even though i did the 2 week pro trial. contact sales won't take my gmail. is there any support i can contact?\nsuggested response: Route to hi@cursor.com for account-specific billing review (trial-charge dispute). Keep the public X reply short; avoid discussing trial policy details without a verified doc/case reference.\nsuggested reply: Please email hi@cursor.com so the team can review the charge and your trial status for your account. Include the account email and the charge date/time. \n\nPublic support here can’t verify invoice/timeline details.\n\nlink to post: https://x.com/trialcharged/status/trial-charged-no-contact\nsources: https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/teams-management, https://cursor.com/help/account-and-billing/overages",
+  "fallback": {
+    "reason": "The current Cursor help sources provided do not contain a clear, citation-backed policy for charges that occur during/after a Pro trial, so we should not guess the outcome or cause.",
+    "likely_issue_areas": [
+      "billing/pricing",
+      "account/access",
+      "trial conversion/verification"
+    ],
+    "manual_next_step": "Direct the user to hi@cursor.com for invoice/trial status verification; do not request sensitive billing info in the public thread."
+  },
+  "sop_tags": [
+    "billing/pricing",
+    "high",
+    "escalation required",
+    "route-hi-email",
+    "no-dm",
+    "human-in-the-loop"
+  ],
+  "timing": {
+    "processed_at": "2026-04-03T20:39:37.757Z",
+    "retrieval_ms": 1809,
+    "model_ms": 4144,
+    "total_ms": 5953
+  },
+  "model": {
+    "provider": "openai",
+    "model": "gpt-5.4-nano",
+    "mode": "openai-responses"
+  }
+}

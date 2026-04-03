@@ -1,0 +1,17 @@
+{
+  "name": "cursor-support-x",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Human-in-the-loop support triage demo for Cursor X mentions.",
+  "scripts": {
+    "kb:sync": "node --experimental-transform-types src/cli.ts kb:sync",
+    "kb:seed-demo": "node --experimental-transform-types src/cli.ts kb:seed-demo",
+    "mentions:poll": "node --experimental-transform-types src/cli.ts mentions:poll",
+    "mentions:watch": "node --experimental-transform-types src/cli.ts mentions:watch",
+    "demo:fixtures": "node --experimental-transform-types src/cli.ts demo:fixtures",
+    "demo:final": "node --experimental-transform-types src/cli.ts demo:final",
+    "demo:message": "node --experimental-transform-types src/cli.ts demo:message",
+    "test": "node --experimental-transform-types --test test/**/*.test.ts"
+  }
+}

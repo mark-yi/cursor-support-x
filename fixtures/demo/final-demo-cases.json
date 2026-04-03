@@ -1,0 +1,48 @@
+{
+  "version": "2026-04-03",
+  "purpose": "Final demo cases for the Cursor support X triage prototype.",
+  "cases": [
+    {
+      "id": "billing-dispute-april-cancel",
+      "handle": "angrycustomer",
+      "scenario": "Charged after cancellation",
+      "text": "@cursorsupport wtf you charged me for april even though i canceled my subscription",
+      "createdAt": "2026-04-03T20:00:00.000Z"
+    },
+    {
+      "id": "refund-last-month",
+      "handle": "refundseeker",
+      "scenario": "Refund request for a prior billing period",
+      "text": "@cursorsupport i want a refund for last month can someone fix this",
+      "createdAt": "2026-04-03T20:01:00.000Z"
+    },
+    {
+      "id": "ide-connect-account",
+      "handle": "ideblocked",
+      "scenario": "Made an account but cannot connect in the IDE",
+      "text": "@cursorsupport i made an account but i can't connect in the IDE. it keeps failing when i try to sign in",
+      "createdAt": "2026-04-03T20:02:00.000Z"
+    },
+    {
+      "id": "email-slow-annual-switch",
+      "handle": "annualswitch",
+      "scenario": "Support email feels unresponsive and user wants to switch to annual billing",
+      "text": "@cursorsupport paying customer here. i emailed support 2 days ago and got no confirmation. also how do i switch to annual without canceling my next monthly renewal?",
+      "createdAt": "2026-04-03T20:03:00.000Z"
+    },
+    {
+      "id": "trial-charged-no-contact",
+      "handle": "trialcharged",
+      "scenario": "Charged after trial and user cannot use the sales contact path",
+      "text": "@cursorsupport i got charged even though i did the 2 week pro trial. contact sales won't take my gmail. is there any support i can contact?",
+      "createdAt": "2026-04-03T20:04:00.000Z"
+    },
+    {
+      "id": "billing-reply-stalled-premium-prompts",
+      "handle": "premiumpromptbill",
+      "scenario": "Billing thread stalled and paid prompts are unusable",
+      "text": "@cursorsupport billing issue here. support stopped replying and i got charged extra for premium prompts but still can't use them. what do i do?",
+      "createdAt": "2026-04-03T20:05:00.000Z"
+    }
+  ]
+}

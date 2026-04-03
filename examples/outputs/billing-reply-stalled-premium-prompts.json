@@ -1,0 +1,165 @@
+{
+  "mention": {
+    "id": "billing-reply-stalled-premium-prompts",
+    "text": "@cursorsupport billing issue here. support stopped replying and i got charged extra for premium prompts but still can't use them. what do i do?",
+    "authorId": "premiumpromptbill",
+    "authorHandle": "premiumpromptbill",
+    "createdAt": "2026-04-03T20:05:00.000Z",
+    "permalink": "https://x.com/premiumpromptbill/status/billing-reply-stalled-premium-prompts",
+    "conversationId": "billing-reply-stalled-premium-prompts",
+    "inReplyToUserId": null
+  },
+  "triage": {
+    "category": "billing/pricing",
+    "confidence": 0.9,
+    "priority": "high",
+    "needs_human_review": true,
+    "summary": "User reports extra premium-prompt charges and that they can’t use the feature; this requires account-specific billing investigation. Best source: route billing issues to hi@cursor.com."
+  },
+  "suggested_response": "Public reply: keep brief, don’t request sensitive billing details on X, and route to hi@cursor.com. Ask user to email from the address linked to their account and include the relevant charge/invoice details and description. (Optionally mention checking cursor.com/dashboard → Billing & Invoices to find the charge date/invoice.)",
+  "suggested_reply": "Please email hi@cursor.com from the email address linked to your Cursor account so the team can review the extra premium prompt charges and verify access. Include the charge/invoice date (and a short description of what you’re seeing when you try to use Premium). You can also check cursor.com/dashboard → Billing & Invoices for the invoice details to reference in your email.",
+  "sources": [
+    {
+      "title": "Billing and payments",
+      "url": "https://cursor.com/help/account-and-billing/billing",
+      "snippet": "What if my billing issue isn't covered here? Email hi@cursor.com from the email address linked to your account. Include your account details and a description of the issue.",
+      "relevanceScore": 55.01,
+      "relevanceReason": "Semantic match plus terms: billing, issue, here.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Usage-based charges",
+      "url": "https://cursor.com/help/account-and-billing/overages",
+      "snippet": "w do I check my usage? Go to cursor.com/dashboard and click Billing & Invoices. You'll see two sections: Included Usage: Usage covered by your monthly subscription. Note: The total here can go above the posted minimums (...",
+      "relevanceScore": 59.64,
+      "relevanceReason": "Semantic match plus terms: billing, here, subscription.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Pricing and plans",
+      "url": "https://cursor.com/help/account-and-billing/pricing",
+      "snippet": "What are Auto and Premium? Auto and Premium are model routers that pick models for you. Auto balances intelligence, cost, and reliability. It has fixed token rates ($1.25/1M input, $6.00/1M output, $0.25/1M cache read) r...",
+      "relevanceScore": 42.92,
+      "relevanceReason": "Semantic match plus terms: premium.",
+      "sourceType": "pricing"
+    }
+  ],
+  "retrieval_debug": {
+    "rewritten_query": "billing charged extra premium prompts use support stopped replying",
+    "retrieval_mode": "hybrid",
+    "semantic_weight": 0.65,
+    "rerank_attempted": true,
+    "rerank_changed_order": true,
+    "top_candidates_before_rerank": [
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "w do I check my usage? Go to cursor.com/dashboard and click Billing & Invoices. You'll see two sections: Included Usage: Usage covered by your monthly subscription. Note: The total here can go above the posted minimums (...",
+        "relevanceScore": 59.64,
+        "relevanceReason": "Semantic match plus terms: billing, here, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "I cancel my subscription? Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click Manage Subscription Click Cancel Subscription and confirm...",
+        "relevanceScore": 58.13,
+        "relevanceReason": "Semantic match plus terms: billing, cancel, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "What if my billing issue isn't covered here? Email hi@cursor.com from the email address linked to your account. Include your account details and a description of the issue.",
+        "relevanceScore": 55.01,
+        "relevanceReason": "Semantic match plus terms: billing, issue, here.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "e shared across all team members Invoice and purchase order billing SCIM seat management and automated provisioning AI code tracking API and audit logs Granular admin controls (Model Access Control, Auto Run Configuratio...",
+        "relevanceScore": 49.09,
+        "relevanceReason": "Semantic match plus terms: billing, support.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "What are Auto and Premium? Auto and Premium are model routers that pick models for you. Auto balances intelligence, cost, and reliability. It has fixed token rates ($1.25/1M input, $6.00/1M output, $0.25/1M cache read) r...",
+        "relevanceScore": 42.92,
+        "relevanceReason": "Semantic match plus terms: premium.",
+        "sourceType": "pricing"
+      }
+    ],
+    "top_candidates_after_rerank": [
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "What if my billing issue isn't covered here? Email hi@cursor.com from the email address linked to your account. Include your account details and a description of the issue.",
+        "relevanceScore": 55.01,
+        "relevanceReason": "Semantic match plus terms: billing, issue, here.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "w do I check my usage? Go to cursor.com/dashboard and click Billing & Invoices. You'll see two sections: Included Usage: Usage covered by your monthly subscription. Note: The total here can go above the posted minimums (...",
+        "relevanceScore": 59.64,
+        "relevanceReason": "Semantic match plus terms: billing, here, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "What are Auto and Premium? Auto and Premium are model routers that pick models for you. Auto balances intelligence, cost, and reliability. It has fixed token rates ($1.25/1M input, $6.00/1M output, $0.25/1M cache read) r...",
+        "relevanceScore": 42.92,
+        "relevanceReason": "Semantic match plus terms: premium.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "I cancel my subscription? Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click Manage Subscription Click Cancel Subscription and confirm...",
+        "relevanceScore": 58.13,
+        "relevanceReason": "Semantic match plus terms: billing, cancel, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "e shared across all team members Invoice and purchase order billing SCIM seat management and automated provisioning AI code tracking API and audit logs Granular admin controls (Model Access Control, Auto Run Configuratio...",
+        "relevanceScore": 49.09,
+        "relevanceReason": "Semantic match plus terms: billing, support.",
+        "sourceType": "pricing"
+      }
+    ]
+  },
+  "slack_fields": {
+    "new_mention": "@cursorsupport billing issue here. support stopped replying and i got charged extra for premium prompts but still can't use them. what do i do?",
+    "suggested_response": "Public reply: keep brief, don’t request sensitive billing details on X, and route to hi@cursor.com. Ask user to email from the address linked to their account and include the relevant charge/invoice details and description. (Optionally mention checking cursor.com/dashboard → Billing & Invoices to find the charge date/invoice.)",
+    "suggested_reply": "Please email hi@cursor.com from the email address linked to your Cursor account so the team can review the extra premium prompt charges and verify access. Include the charge/invoice date (and a short description of what you’re seeing when you try to use Premium). You can also check cursor.com/dashboard → Billing & Invoices for the invoice details to reference in your email.",
+    "link_to_post": "https://x.com/premiumpromptbill/status/billing-reply-stalled-premium-prompts",
+    "sources": "https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/overages, https://cursor.com/help/account-and-billing/pricing"
+  },
+  "slack_message": "new mention: @cursorsupport billing issue here. support stopped replying and i got charged extra for premium prompts but still can't use them. what do i do?\nsuggested response: Public reply: keep brief, don’t request sensitive billing details on X, and route to hi@cursor.com. Ask user to email from the address linked to their account and include the relevant charge/invoice details and description. (Optionally mention checking cursor.com/dashboard → Billing & Invoices to find the charge date/invoice.)\nsuggested reply: Please email hi@cursor.com from the email address linked to your Cursor account so the team can review the extra premium prompt charges and verify access. Include the charge/invoice date (and a short description of what you’re seeing when you try to use Premium). You can also check cursor.com/dashboard → Billing & Invoices for the invoice details to reference in your email.\n\nlink to post: https://x.com/premiumpromptbill/status/billing-reply-stalled-premium-prompts\nsources: https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/overages, https://cursor.com/help/account-and-billing/pricing",
+  "fallback": null,
+  "sop_tags": [
+    "billing/pricing",
+    "high",
+    "route-hi-email",
+    "no-sensitive-details-public",
+    "human-in-the-loop"
+  ],
+  "timing": {
+    "processed_at": "2026-04-03T20:39:44.240Z",
+    "retrieval_ms": 2286,
+    "model_ms": 4196,
+    "total_ms": 6482
+  },
+  "model": {
+    "provider": "openai",
+    "model": "gpt-5.4-nano",
+    "mode": "openai-responses"
+  }
+}

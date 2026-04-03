@@ -1,0 +1,175 @@
+{
+  "mention": {
+    "id": "email-slow-annual-switch",
+    "text": "@cursorsupport paying customer here. i emailed support 2 days ago and got no confirmation. also how do i switch to annual without canceling my next monthly renewal?",
+    "authorId": "annualswitch",
+    "authorHandle": "annualswitch",
+    "createdAt": "2026-04-03T20:03:00.000Z",
+    "permalink": "https://x.com/annualswitch/status/email-slow-annual-switch",
+    "conversationId": "email-slow-annual-switch",
+    "inReplyToUserId": null
+  },
+  "triage": {
+    "category": "billing/pricing",
+    "confidence": 0.78,
+    "priority": "high",
+    "needs_human_review": true,
+    "summary": "User (paying customer) reports no confirmation after emailing support for 2 days, and asks how to switch from monthly to annual without canceling their next monthly renewal. Policy source indicates mid-plan switching isn’t supported and that changes should be scheduled via the Adjust plan flow."
+  },
+  "suggested_response": "Route to human billing support to (1) look up the user’s prior email ticket and confirm status/confirmation delivery, and (2) verify the exact monthly→annual scheduling behavior in the Adjust plan flow from the dashboard for this account. Use pricing-doc guidance: mid-plan switching isn’t supported; plan changes are scheduled via Adjust plan rather than cancel/restart.",
+  "suggested_reply": "Cursor doesn’t support switching plans mid-cycle. To move from monthly to annual without canceling your next monthly renewal, use the Adjust plan flow in your billing dashboard so the switch is scheduled for the end of your current billing period. Since you haven’t received a confirmation from your earlier email, please contact hi@cursor.com so the team can locate your ticket and update you.",
+  "sources": [
+    {
+      "title": "Pricing and plans",
+      "url": "https://cursor.com/help/account-and-billing/pricing",
+      "snippet": "e Now on the green banner at the top To switch to monthly: There is no way to switch mid-plan. Use the Adjust plan flow to schedule the switch at the end of your yearly billing period....",
+      "relevanceScore": 50.57,
+      "relevanceReason": "Semantic match plus terms: no, switch, monthly, billing.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Billing and payments",
+      "url": "https://cursor.com/help/account-and-billing/billing",
+      "snippet": "+, Ultra): Go to cursor.com/dashboard/billing Click Upgrade Now on the green banner at the top Teams plan: Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click the Upgrade Now button to switch...",
+      "relevanceScore": 57.9,
+      "relevanceReason": "Semantic match plus terms: switch, annual, monthly, billing.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Cancel your subscription",
+      "url": "https://cursor.com/help/account-and-billing/cancel",
+      "snippet": "Canceling is self-serve and takes about 30 seconds. You keep access until the end of your billing period.",
+      "relevanceScore": 56.13,
+      "relevanceReason": "Semantic match plus terms: canceling, billing, cancel, subscription.",
+      "sourceType": "pricing"
+    }
+  ],
+  "retrieval_debug": {
+    "rewritten_query": "paying customer here emailed support days ago no confirmation also switch annual",
+    "retrieval_mode": "hybrid",
+    "semantic_weight": 0.65,
+    "rerank_attempted": true,
+    "rerank_changed_order": true,
+    "top_candidates_before_rerank": [
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "+, Ultra): Go to cursor.com/dashboard/billing Click Upgrade Now on the green banner at the top Teams plan: Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click the Upgrade Now button to switch...",
+        "relevanceScore": 57.9,
+        "relevanceReason": "Semantic match plus terms: switch, annual, monthly, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "Canceling is self-serve and takes about 30 seconds. You keep access until the end of your billing period.",
+        "relevanceScore": 56.13,
+        "relevanceReason": "Semantic match plus terms: canceling, billing, cancel, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "e Now on the green banner at the top To switch to monthly: There is no way to switch mid-plan. Use the Adjust plan flow to schedule the switch at the end of your yearly billing period....",
+        "relevanceScore": 50.57,
+        "relevanceReason": "Semantic match plus terms: no, switch, monthly, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Change your email address",
+        "url": "https://cursor.com/help/account-and-billing/change-email",
+        "snippet": "Can I switch my Cursor account to a different email? There is no way to change the email on an existing account. As a workaround, you can create a new account with your preferred email. Cancel your subscription (if activ...",
+        "relevanceScore": 47.06,
+        "relevanceReason": "Semantic match plus terms: no, switch, billing, cancel.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "Run Configuration, Repository Blocklist, MCP Configuration) Customer Managed Encryption Keys (CMEK) Priority support and dedicated account management...",
+        "relevanceScore": 44.84,
+        "relevanceReason": "Semantic match plus terms: customer, support, billing.",
+        "sourceType": "pricing"
+      }
+    ],
+    "top_candidates_after_rerank": [
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "e Now on the green banner at the top To switch to monthly: There is no way to switch mid-plan. Use the Adjust plan flow to schedule the switch at the end of your yearly billing period....",
+        "relevanceScore": 50.57,
+        "relevanceReason": "Semantic match plus terms: no, switch, monthly, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "+, Ultra): Go to cursor.com/dashboard/billing Click Upgrade Now on the green banner at the top Teams plan: Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click the Upgrade Now button to switch...",
+        "relevanceScore": 57.9,
+        "relevanceReason": "Semantic match plus terms: switch, annual, monthly, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "Canceling is self-serve and takes about 30 seconds. You keep access until the end of your billing period.",
+        "relevanceScore": 56.13,
+        "relevanceReason": "Semantic match plus terms: canceling, billing, cancel, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Change your email address",
+        "url": "https://cursor.com/help/account-and-billing/change-email",
+        "snippet": "Can I switch my Cursor account to a different email? There is no way to change the email on an existing account. As a workaround, you can create a new account with your preferred email. Cancel your subscription (if activ...",
+        "relevanceScore": 47.06,
+        "relevanceReason": "Semantic match plus terms: no, switch, billing, cancel.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "Run Configuration, Repository Blocklist, MCP Configuration) Customer Managed Encryption Keys (CMEK) Priority support and dedicated account management...",
+        "relevanceScore": 44.84,
+        "relevanceReason": "Semantic match plus terms: customer, support, billing.",
+        "sourceType": "pricing"
+      }
+    ]
+  },
+  "slack_fields": {
+    "new_mention": "@cursorsupport paying customer here. i emailed support 2 days ago and got no confirmation. also how do i switch to annual without canceling my next monthly renewal?",
+    "suggested_response": "Route to human billing support to (1) look up the user’s prior email ticket and confirm status/confirmation delivery, and (2) verify the exact monthly→annual scheduling behavior in the Adjust plan flow from the dashboard for this account. Use pricing-doc guidance: mid-plan switching isn’t supported; plan changes are scheduled via Adjust plan rather than cancel/restart.",
+    "suggested_reply": "Cursor doesn’t support switching plans mid-cycle. To move from monthly to annual without canceling your next monthly renewal, use the Adjust plan flow in your billing dashboard so the switch is scheduled for the end of your current billing period. Since you haven’t received a confirmation from your earlier email, please contact hi@cursor.com so the team can locate your ticket and update you.",
+    "link_to_post": "https://x.com/annualswitch/status/email-slow-annual-switch",
+    "sources": "https://cursor.com/help/account-and-billing/pricing, https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/cancel"
+  },
+  "slack_message": "new mention: @cursorsupport paying customer here. i emailed support 2 days ago and got no confirmation. also how do i switch to annual without canceling my next monthly renewal?\nsuggested response: Route to human billing support to (1) look up the user’s prior email ticket and confirm status/confirmation delivery, and (2) verify the exact monthly→annual scheduling behavior in the Adjust plan flow from the dashboard for this account. Use pricing-doc guidance: mid-plan switching isn’t supported; plan changes are scheduled via Adjust plan rather than cancel/restart.\nsuggested reply: Cursor doesn’t support switching plans mid-cycle. To move from monthly to annual without canceling your next monthly renewal, use the Adjust plan flow in your billing dashboard so the switch is scheduled for the end of your current billing period. Since you haven’t received a confirmation from your earlier email, please contact hi@cursor.com so the team can locate your ticket and update you.\n\nlink to post: https://x.com/annualswitch/status/email-slow-annual-switch\nsources: https://cursor.com/help/account-and-billing/pricing, https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/cancel",
+  "fallback": {
+    "reason": "The sources provided don’t explicitly spell out monthly→annual timing without canceling the next renewal, and there’s no documentation coverage for missing/no email confirmations. A human should verify the exact scheduling behavior in the Adjust plan flow and check the prior ticket status.",
+    "likely_issue_areas": [
+      "billing/pricing",
+      "account/access",
+      "escalation required"
+    ],
+    "manual_next_step": "Ask a human to: (a) find the user’s prior support email/ticket and send a confirmation/update, and (b) confirm the exact “effective date” behavior when switching monthly→annual via Adjust plan (so the next renewal remains intact)."
+  },
+  "sop_tags": [
+    "billing/pricing",
+    "high",
+    "escalate",
+    "adjust-plan-flow",
+    "no-mid-plan-switch",
+    "stay-on-x",
+    "human-in-the-loop"
+  ],
+  "timing": {
+    "processed_at": "2026-04-03T20:39:31.801Z",
+    "retrieval_ms": 1804,
+    "model_ms": 8535,
+    "total_ms": 10340
+  },
+  "model": {
+    "provider": "openai",
+    "model": "gpt-5.4-nano",
+    "mode": "openai-responses"
+  }
+}

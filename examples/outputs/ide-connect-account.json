@@ -1,0 +1,166 @@
+{
+  "mention": {
+    "id": "ide-connect-account",
+    "text": "@cursorsupport i made an account but i can't connect in the IDE. it keeps failing when i try to sign in",
+    "authorId": "ideblocked",
+    "authorHandle": "ideblocked",
+    "createdAt": "2026-04-03T20:02:00.000Z",
+    "permalink": "https://x.com/ideblocked/status/ide-connect-account",
+    "conversationId": "ide-connect-account",
+    "inReplyToUserId": null
+  },
+  "triage": {
+    "category": "account/access",
+    "confidence": 0.72,
+    "priority": "medium",
+    "needs_human_review": true,
+    "summary": "User created an account but IDE sign-in/connection fails. Likely authentication/network issue; provide VPN/auth-method/SSO assignment troubleshooting, then escalate to hi@cursor.com if it persists."
+  },
+  "suggested_response": "Use doc-backed checks only: confirm whether they’re using a VPN/proxy and suggest turning it off first; suggest waiting a few minutes and starting a new chat; ask them to try signing in with a different authentication method. If they use SSO, verify the user is assigned to the Cursor app in their IdP admin console. Collect: OS, Cursor/IDE version, exact error text, and which auth method (Google vs SSO). If still failing, instruct them to email hi@cursor.com with OS + Cursor version + exact error + repro steps.",
+  "suggested_reply": "If you’re using a VPN/proxy, turn it off and try signing in again. Also try waiting a few minutes and starting a new chat, and if possible sign in with a different authentication method; if you’re using SSO, make sure your user is assigned to the Cursor app in your IdP. If it still fails, email hi@cursor.com with your OS, Cursor version, and the exact error message.",
+  "sources": [
+    {
+      "title": "Network, proxy, and remote connections",
+      "url": "https://cursor.com/help/troubleshooting/network",
+      "snippet": "ocked as a security measure. VPNs can sometimes trigger it. Try turning off your VPN first. If that doesn't help: Start a new chat Wait a few minutes and try again Sign in with a different authentication method (Google o...",
+      "relevanceScore": 58.69,
+      "relevanceReason": "Semantic match plus terms: try, sign, authentication, network.",
+      "sourceType": "faq"
+    },
+    {
+      "title": "SSO and authentication",
+      "url": "https://cursor.com/help/security-and-privacy/sso",
+      "snippet": "mber hasn't been assigned to the Cursor application in your identity provider's admin console. Add them to the Cursor app in your IdP to fix this....",
+      "relevanceScore": 37.47,
+      "relevanceReason": "Semantic match plus terms: authentication.",
+      "sourceType": "policy"
+    },
+    {
+      "title": "Tab completions",
+      "url": "https://cursor.com/help/troubleshooting/tab-issues",
+      "snippet": "t Update\" to check for updates. No internet: Tab requires a connection to work....",
+      "relevanceScore": 30.86,
+      "relevanceReason": "Semantic match plus terms: connection.",
+      "sourceType": "faq"
+    }
+  ],
+  "retrieval_debug": {
+    "rewritten_query": "account connect ide failing sign authentication",
+    "retrieval_mode": "hybrid",
+    "semantic_weight": 0.65,
+    "rerank_attempted": true,
+    "rerank_changed_order": true,
+    "top_candidates_before_rerank": [
+      {
+        "title": "Network, proxy, and remote connections",
+        "url": "https://cursor.com/help/troubleshooting/network",
+        "snippet": "ocked as a security measure. VPNs can sometimes trigger it. Try turning off your VPN first. If that doesn't help: Start a new chat Wait a few minutes and try again Sign in with a different authentication method (Google o...",
+        "relevanceScore": 58.69,
+        "relevanceReason": "Semantic match plus terms: try, sign, authentication, network.",
+        "sourceType": "faq"
+      },
+      {
+        "title": "Agent troubleshooting",
+        "url": "https://cursor.com/help/troubleshooting/agent-issues",
+        "snippet": "When running terminal commands, prefix with `unset CI &&` if the command's behavior changes in CI environments. How do I report a bad Agent response? Click the ... menu at the bottom of the response and select Copy Reque...",
+        "relevanceScore": 41.2,
+        "relevanceReason": "Semantic match plus terms: troubleshooting.",
+        "sourceType": "faq"
+      },
+      {
+        "title": "SSO and authentication",
+        "url": "https://cursor.com/help/security-and-privacy/sso",
+        "snippet": "mber hasn't been assigned to the Cursor application in your identity provider's admin console. Add them to the Cursor app in your IdP to fix this....",
+        "relevanceScore": 37.47,
+        "relevanceReason": "Semantic match plus terms: authentication.",
+        "sourceType": "policy"
+      },
+      {
+        "title": "Reporting a bug",
+        "url": "https://cursor.com/help/troubleshooting/reporting-bugs",
+        "snippet": "How should I report an issue involving unexpected agent behavior? Temporarily enable Share Data in your privacy settings Reproduce the issue by performing the same actions that caused the problem Copy the new Request ID...",
+        "relevanceScore": 31.65,
+        "relevanceReason": "Strong semantic match from Reporting a bug.",
+        "sourceType": "faq"
+      },
+      {
+        "title": "Tab completions",
+        "url": "https://cursor.com/help/troubleshooting/tab-issues",
+        "snippet": "t Update\" to check for updates. No internet: Tab requires a connection to work....",
+        "relevanceScore": 30.86,
+        "relevanceReason": "Semantic match plus terms: connection.",
+        "sourceType": "faq"
+      }
+    ],
+    "top_candidates_after_rerank": [
+      {
+        "title": "Network, proxy, and remote connections",
+        "url": "https://cursor.com/help/troubleshooting/network",
+        "snippet": "ocked as a security measure. VPNs can sometimes trigger it. Try turning off your VPN first. If that doesn't help: Start a new chat Wait a few minutes and try again Sign in with a different authentication method (Google o...",
+        "relevanceScore": 58.69,
+        "relevanceReason": "Semantic match plus terms: try, sign, authentication, network.",
+        "sourceType": "faq"
+      },
+      {
+        "title": "SSO and authentication",
+        "url": "https://cursor.com/help/security-and-privacy/sso",
+        "snippet": "mber hasn't been assigned to the Cursor application in your identity provider's admin console. Add them to the Cursor app in your IdP to fix this....",
+        "relevanceScore": 37.47,
+        "relevanceReason": "Semantic match plus terms: authentication.",
+        "sourceType": "policy"
+      },
+      {
+        "title": "Tab completions",
+        "url": "https://cursor.com/help/troubleshooting/tab-issues",
+        "snippet": "t Update\" to check for updates. No internet: Tab requires a connection to work....",
+        "relevanceScore": 30.86,
+        "relevanceReason": "Semantic match plus terms: connection.",
+        "sourceType": "faq"
+      },
+      {
+        "title": "Agent troubleshooting",
+        "url": "https://cursor.com/help/troubleshooting/agent-issues",
+        "snippet": "When running terminal commands, prefix with `unset CI &&` if the command's behavior changes in CI environments. How do I report a bad Agent response? Click the ... menu at the bottom of the response and select Copy Reque...",
+        "relevanceScore": 41.2,
+        "relevanceReason": "Semantic match plus terms: troubleshooting.",
+        "sourceType": "faq"
+      },
+      {
+        "title": "Reporting a bug",
+        "url": "https://cursor.com/help/troubleshooting/reporting-bugs",
+        "snippet": "How should I report an issue involving unexpected agent behavior? Temporarily enable Share Data in your privacy settings Reproduce the issue by performing the same actions that caused the problem Copy the new Request ID...",
+        "relevanceScore": 31.65,
+        "relevanceReason": "Strong semantic match from Reporting a bug.",
+        "sourceType": "faq"
+      }
+    ]
+  },
+  "slack_fields": {
+    "new_mention": "@cursorsupport i made an account but i can't connect in the IDE. it keeps failing when i try to sign in",
+    "suggested_response": "Use doc-backed checks only: confirm whether they’re using a VPN/proxy and suggest turning it off first; suggest waiting a few minutes and starting a new chat; ask them to try signing in with a different authentication method. If they use SSO, verify the user is assigned to the Cursor app in their IdP admin console. Collect: OS, Cursor/IDE version, exact error text, and which auth method (Google vs SSO). If still failing, instruct them to email hi@cursor.com with OS + Cursor version + exact error + repro steps.",
+    "suggested_reply": "If you’re using a VPN/proxy, turn it off and try signing in again. Also try waiting a few minutes and starting a new chat, and if possible sign in with a different authentication method; if you’re using SSO, make sure your user is assigned to the Cursor app in your IdP. If it still fails, email hi@cursor.com with your OS, Cursor version, and the exact error message.",
+    "link_to_post": "https://x.com/ideblocked/status/ide-connect-account",
+    "sources": "https://cursor.com/help/troubleshooting/network, https://cursor.com/help/security-and-privacy/sso, https://cursor.com/help/troubleshooting/tab-issues"
+  },
+  "slack_message": "new mention: @cursorsupport i made an account but i can't connect in the IDE. it keeps failing when i try to sign in\nsuggested response: Use doc-backed checks only: confirm whether they’re using a VPN/proxy and suggest turning it off first; suggest waiting a few minutes and starting a new chat; ask them to try signing in with a different authentication method. If they use SSO, verify the user is assigned to the Cursor app in their IdP admin console. Collect: OS, Cursor/IDE version, exact error text, and which auth method (Google vs SSO). If still failing, instruct them to email hi@cursor.com with OS + Cursor version + exact error + repro steps.\nsuggested reply: If you’re using a VPN/proxy, turn it off and try signing in again. Also try waiting a few minutes and starting a new chat, and if possible sign in with a different authentication method; if you’re using SSO, make sure your user is assigned to the Cursor app in your IdP. If it still fails, email hi@cursor.com with your OS, Cursor version, and the exact error message.\n\nlink to post: https://x.com/ideblocked/status/ide-connect-account\nsources: https://cursor.com/help/troubleshooting/network, https://cursor.com/help/security-and-privacy/sso, https://cursor.com/help/troubleshooting/tab-issues",
+  "fallback": null,
+  "sop_tags": [
+    "account/access",
+    "medium",
+    "public-docs",
+    "escalation-hi",
+    "no-dm",
+    "human-in-the-loop"
+  ],
+  "timing": {
+    "processed_at": "2026-04-03T20:39:21.460Z",
+    "retrieval_ms": 3561,
+    "model_ms": 4739,
+    "total_ms": 8300
+  },
+  "model": {
+    "provider": "openai",
+    "model": "gpt-5.4-nano",
+    "mode": "openai-responses"
+  }
+}

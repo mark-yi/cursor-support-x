@@ -1,0 +1,166 @@
+{
+  "mention": {
+    "id": "billing-dispute-april-cancel",
+    "text": "@cursorsupport wtf you charged me for april even though i canceled my subscription",
+    "authorId": "angrycustomer",
+    "authorHandle": "angrycustomer",
+    "createdAt": "2026-04-03T20:00:00.000Z",
+    "permalink": "https://x.com/angrycustomer/status/billing-dispute-april-cancel",
+    "conversationId": "billing-dispute-april-cancel",
+    "inReplyToUserId": null
+  },
+  "triage": {
+    "category": "billing/pricing",
+    "confidence": 0.86,
+    "priority": "high",
+    "needs_human_review": true,
+    "summary": "User reports being charged in April despite canceling. Policy sources indicate cancellation stops future charges and takes effect at end of the current billing period; account-specific invoice/cancellation-timestamp review is still needed."
+  },
+  "suggested_response": "Public reply can cite: cancellation takes effect at the end of the current billing period, so a charge may still appear for the remainder of the active period. Route to hi@cursor.com for invoice review; do not request card details or sensitive billing/account info on X. Human checklist: confirm cancellation timestamp, current billing period end date, invoice/charge date, and whether the charge corresponds to an already-active period.",
+  "suggested_reply": "Cancellation takes effect at the end of your current billing period, so you may still see a charge for that period even if you canceled. If you were billed after your cancellation, email hi@cursor.com and the team can review your April invoice against your cancellation timing.",
+  "sources": [
+    {
+      "title": "Refund policy",
+      "url": "https://cursor.com/help/account-and-billing/refunds",
+      "snippet": "ds. Can I cancel without a refund? Yes. You can cancel your subscription at any time to stop future charges. Cancellation takes effect at the end of your current billing period....",
+      "relevanceScore": 50.99,
+      "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Billing and payments",
+      "url": "https://cursor.com/help/account-and-billing/billing",
+      "snippet": "ove a payment method after your subscription has been fully canceled and the billing period has ended....",
+      "relevanceScore": 55.51,
+      "relevanceReason": "Semantic match plus terms: canceled, subscription, billing.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Cancel your subscription",
+      "url": "https://cursor.com/help/account-and-billing/cancel",
+      "snippet": "How do I cancel my subscription? Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click Manage Subscription Click Cancel Subscription and confirm",
+      "relevanceScore": 70.08,
+      "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+      "sourceType": "pricing"
+    }
+  ],
+  "retrieval_debug": {
+    "rewritten_query": "billing charged april canceled subscription",
+    "retrieval_mode": "hybrid",
+    "semantic_weight": 0.65,
+    "rerank_attempted": true,
+    "rerank_changed_order": true,
+    "top_candidates_before_rerank": [
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "How do I cancel my subscription? Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click Manage Subscription Click Cancel Subscription and confirm",
+        "relevanceScore": 70.08,
+        "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "ove a payment method after your subscription has been fully canceled and the billing period has ended....",
+        "relevanceScore": 55.51,
+        "relevanceReason": "Semantic match plus terms: canceled, subscription, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "On-Demand Usage: Any usage charged above your monthly subscription. How do I prevent on-demand charges? Disable on-demand usage: Turn it off in your dashboard settings to stop requests once your included usage runs out S...",
+        "relevanceScore": 51.84,
+        "relevanceReason": "Semantic match plus terms: charged, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Refund policy",
+        "url": "https://cursor.com/help/account-and-billing/refunds",
+        "snippet": "ds. Can I cancel without a refund? Yes. You can cancel your subscription at any time to stop future charges. Cancellation takes effect at the end of your current billing period....",
+        "relevanceScore": 50.99,
+        "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Delete your account",
+        "url": "https://cursor.com/help/account-and-billing/delete-account",
+        "snippet": "How do I delete my account? Cancel your subscription first (if active) via Billing > Manage Subscription > Cancel Subscription Go to cursor.com/dashboard Scroll to Advanced Account Settings Click Delete Account and confi...",
+        "relevanceScore": 48.49,
+        "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+        "sourceType": "pricing"
+      }
+    ],
+    "top_candidates_after_rerank": [
+      {
+        "title": "Refund policy",
+        "url": "https://cursor.com/help/account-and-billing/refunds",
+        "snippet": "ds. Can I cancel without a refund? Yes. You can cancel your subscription at any time to stop future charges. Cancellation takes effect at the end of your current billing period....",
+        "relevanceScore": 50.99,
+        "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "ove a payment method after your subscription has been fully canceled and the billing period has ended....",
+        "relevanceScore": 55.51,
+        "relevanceReason": "Semantic match plus terms: canceled, subscription, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "How do I cancel my subscription? Go to cursor.com/dashboard Click Billing and Invoices in the left sidebar Click Manage Subscription Click Cancel Subscription and confirm",
+        "relevanceScore": 70.08,
+        "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "On-Demand Usage: Any usage charged above your monthly subscription. How do I prevent on-demand charges? Disable on-demand usage: Turn it off in your dashboard settings to stop requests once your included usage runs out S...",
+        "relevanceScore": 51.84,
+        "relevanceReason": "Semantic match plus terms: charged, subscription.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Delete your account",
+        "url": "https://cursor.com/help/account-and-billing/delete-account",
+        "snippet": "How do I delete my account? Cancel your subscription first (if active) via Billing > Manage Subscription > Cancel Subscription Go to cursor.com/dashboard Scroll to Advanced Account Settings Click Delete Account and confi...",
+        "relevanceScore": 48.49,
+        "relevanceReason": "Semantic match plus terms: subscription, billing, cancel.",
+        "sourceType": "pricing"
+      }
+    ]
+  },
+  "slack_fields": {
+    "new_mention": "@cursorsupport wtf you charged me for april even though i canceled my subscription",
+    "suggested_response": "Public reply can cite: cancellation takes effect at the end of the current billing period, so a charge may still appear for the remainder of the active period. Route to hi@cursor.com for invoice review; do not request card details or sensitive billing/account info on X. Human checklist: confirm cancellation timestamp, current billing period end date, invoice/charge date, and whether the charge corresponds to an already-active period.",
+    "suggested_reply": "Cancellation takes effect at the end of your current billing period, so you may still see a charge for that period even if you canceled. If you were billed after your cancellation, email hi@cursor.com and the team can review your April invoice against your cancellation timing.",
+    "link_to_post": "https://x.com/angrycustomer/status/billing-dispute-april-cancel",
+    "sources": "https://cursor.com/help/account-and-billing/refunds, https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/cancel"
+  },
+  "slack_message": "new mention: @cursorsupport wtf you charged me for april even though i canceled my subscription\nsuggested response: Public reply can cite: cancellation takes effect at the end of the current billing period, so a charge may still appear for the remainder of the active period. Route to hi@cursor.com for invoice review; do not request card details or sensitive billing/account info on X. Human checklist: confirm cancellation timestamp, current billing period end date, invoice/charge date, and whether the charge corresponds to an already-active period.\nsuggested reply: Cancellation takes effect at the end of your current billing period, so you may still see a charge for that period even if you canceled. If you were billed after your cancellation, email hi@cursor.com and the team can review your April invoice against your cancellation timing.\n\nlink to post: https://x.com/angrycustomer/status/billing-dispute-april-cancel\nsources: https://cursor.com/help/account-and-billing/refunds, https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/cancel",
+  "fallback": null,
+  "sop_tags": [
+    "billing/pricing",
+    "high",
+    "escalate",
+    "route-hi-email",
+    "no-dm",
+    "human-in-the-loop"
+  ],
+  "timing": {
+    "processed_at": "2026-04-03T20:39:07.707Z",
+    "retrieval_ms": 4278,
+    "model_ms": 6858,
+    "total_ms": 11138
+  },
+  "model": {
+    "provider": "openai",
+    "model": "gpt-5.4-nano",
+    "mode": "openai-responses"
+  }
+}
