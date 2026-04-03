@@ -1,149 +1,87 @@
 # Cursor Support X
 
-Human-in-the-loop support triage demo for `@cursorsupport`: mention in, cited support brief out.
+Hey Cursor team!
 
-## At A Glance
+I noticed that Cursor support does not have much of a presence on X.
 
-This repo is a demo of how Cursor support on X could work with a human in the loop.
+I have seen [@ReplitSupport](https://x.com/ReplitSupport) out in the wild, but I also noticed how slow that experience can feel, often taking more than 12 hours to respond. I have also seen complaints on Reddit about slow response times from Cursor support.
 
-Current state:
+If I were thinking about building a world-class support experience for Cursor, one metric I would care a lot about is time to first response.
 
-- official X API polling is wired but not connected to the live `@cursorsupport` account yet
-- the support workflow is fully demoable from fixtures and mock mentions
-- the knowledge base is a local snapshot of the full Cursor help center
-- outputs are Slack-style internal handoff payloads, not automated public replies
+So I built a demo system around `@cursorsupport`, the X account I made for this idea.
 
-What this proves:
+The idea is simple:
 
-- a support rep can go from messy social post to doc-backed suggested reply quickly
-- billing, refund, and account issues can be routed safely
-- the system escalates instead of guessing when the docs are weak
+- someone mentions `@cursorsupport`
+- the system prepares a Slack-ready support brief for a human rep
+- the brief includes the original post, a link to it, a thought from `gpt-5.4-nano`, a copy-pasteable reply, and the Cursor help docs used to support the answer
 
-## Why This Exists
+This repo does **not** auto-reply on X. It is meant to help a support team respond faster and more accurately.
 
-The goal is not to auto-reply on X. The goal is to reduce time to first useful response.
+## Example Outputs
 
-This repo turns a messy support mention into:
-
-- a category and urgency call
-- a short internal recommendation for the support team
-- a copy-pasteable suggested reply
-- official Cursor help links that support the answer
-
-That keeps the human in the loop while removing the slowest part of social support triage: reading the thread, figuring out the issue, finding the right docs, and deciding where to route it.
-
-## See It Quickly
-
-If you only have a minute, look at:
-
-- [mark_thinking.md](/Users/markyi/repos/projects/cursor-support-x/mark_thinking.md)
-- [docs/support_sop.md](/Users/markyi/repos/projects/cursor-support-x/docs/support_sop.md)
-- [examples/README.md](/Users/markyi/repos/projects/cursor-support-x/examples/README.md)
-
-If you want to run the demo:
-
-```bash
-npm run kb:seed-demo
-npm run demo:final
-```
-
-That seeds the local help-center knowledge base from the bundled Cursor help snapshot and regenerates the curated example outputs in `examples/outputs/`.
-
-## What Happens Next
-
-The only meaningful integration step left is connecting the official X API to the real `@cursorsupport` account.
-
-That means:
-
-1. add the account credentials in `.env`
-2. run `mentions:poll` against live mentions
-3. keep the same retrieval and triage pipeline already shown in the examples
-
-Everything else in this repo is already set up to support that flow.
-
-## What The Demo Does
-
-1. Takes an X mention or mock support message.
-2. Rewrites the messy message into a cleaner support-search query.
-3. Retrieves from a local copy of the official Cursor help center.
-4. Uses hybrid retrieval:
-   lexical match + local embeddings + reranking.
-5. Produces a Slack-style handoff payload for a human support rep.
-
-The system does not post to X and does not send to Slack. It prepares the work so a support engineer can respond quickly and accurately.
-
-In one line:
-
-`mention -> query rewrite -> help-center retrieval -> rerank -> suggested handling + suggested reply + sources`
-
-## Example Output
+### 1. Billing dispute
 
 ```text
 new mention: @cursorsupport wtf you charged me for april even though i canceled my subscription
-suggested response: Public reply: note cancellation stops future charges and takes effect at end of current billing period. Route to hi@cursor.com for account-specific invoice review.
-suggested reply: Cancellation stops future charges at the end of the current billing period. For an invoice-specific review of the April charge, email hi@cursor.com with your account email and the charge date.
+suggested response: Public reply can cite that cancellation takes effect at the end of the current billing period, so a charge may still appear for the active period. Route to hi@cursor.com for invoice review.
+suggested reply: Cancellation takes effect at the end of your current billing period, so you may still see a charge for that period even if you canceled. If you were billed after your cancellation, email hi@cursor.com and the team can review your April invoice against your cancellation timing.
 
 link to post: https://x.com/angrycustomer/status/billing-dispute-april-cancel
 sources: https://cursor.com/help/account-and-billing/refunds, https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/cancel
 ```
 
-## Repo Map
+### 2. Refund request
 
-- [mark_thinking.md](/Users/markyi/repos/projects/cursor-support-x/mark_thinking.md): why this matters and why the system is designed this way
-- [docs/support_sop.md](/Users/markyi/repos/projects/cursor-support-x/docs/support_sop.md): operating rules for how the support team should use it
-- [examples/README.md](/Users/markyi/repos/projects/cursor-support-x/examples/README.md): curated demo cases and saved outputs
-- [src/cli.ts](/Users/markyi/repos/projects/cursor-support-x/src/cli.ts): entrypoints for KB sync, mock demos, and X polling
-- [src/triage/pipeline.ts](/Users/markyi/repos/projects/cursor-support-x/src/triage/pipeline.ts): retrieval -> rerank -> draft pipeline
-- [src/kb/](/Users/markyi/repos/projects/cursor-support-x/src/kb): local help-center indexing, embeddings, query rewrite, reranking
+```text
+new mention: @cursorsupport i want a refund for last month can someone fix this
+suggested response: Use the refund policy and cancellation docs as the public baseline. Because this is an account-specific refund request, route to hi@cursor.com and avoid asking for sensitive charge details in public.
+suggested reply: Refunds for previous billing periods are not eligible under the current refund policy. If you believe there is an exception or billing error, email hi@cursor.com from the email on your account and the team can review it.
 
-## Commands
+link to post: https://x.com/refundseeker/status/refund-last-month
+sources: https://cursor.com/help/account-and-billing/refunds, https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/cancel
+```
 
-Core demo commands:
+### 3. Account / IDE connection issue
+
+```text
+new mention: @cursorsupport i made an account but i can't connect in the IDE. it keeps failing when i try to sign in
+suggested response: Start with doc-backed checks only: VPN/proxy, retry after a few minutes, different authentication method, and SSO assignment if relevant. If it still fails, escalate to hi@cursor.com with OS, Cursor version, exact error, and repro steps.
+suggested reply: If you are using a VPN or proxy, turn it off and try again. Also try a different authentication method if possible. If you are using SSO, make sure your user is assigned to the Cursor app in your IdP. If it still fails, email hi@cursor.com with your OS, Cursor version, and the exact error message.
+
+link to post: https://x.com/ideblocked/status/ide-connect-account
+sources: https://cursor.com/help/troubleshooting/network, https://cursor.com/help/security-and-privacy/sso, https://cursor.com/help/troubleshooting/tab-issues
+```
+
+## How It Works
+
+The system has all of `cursor.com/help` scraped locally and embedded so it can point `gpt-5.4-nano` at the right docs when forming an answer.
+
+`gpt-5.4-nano` is also given a standard operating procedure so it knows when to:
+
+- answer directly with docs
+- suggest DM for small personal-account follow-up
+- escalate to `hi@cursor.com`
+- avoid guessing when the docs are weak
+
+The live X integration is written against the official X API, but it is not connected to the real `@cursorsupport` account in this repo yet.
+
+## What I Would Add Next
+
+- evals to check response quality across different support scenarios
+- connect the official X API to the real `@cursorsupport` account
+- connect the Slack handoff to Cursor's actual Slack workspace
+- expand the knowledge base beyond `cursor.com/help` so more involved product questions can be answered
+
+## Repo
+
+- [mark_thinking.md](mark_thinking.md)
+- [docs/support_sop.md](docs/support_sop.md)
+- [examples/README.md](examples/README.md)
+
+If you want to run the demo locally:
 
 ```bash
 npm run kb:seed-demo
 npm run demo:final
-npm run demo:message -- --text "@cursorsupport i got charged after canceling"
 ```
-
-Other commands:
-
-```bash
-npm run kb:sync
-npm run mentions:poll
-npm run mentions:watch
-npm run test
-```
-
-## Environment
-
-Copy `.env.example` to `.env` if you want live integrations.
-
-Optional:
-
-- `OPENAI_API_KEY`
-- `OPENAI_MODEL`
-- `OPENAI_EMBEDDING_MODEL`
-- `OPENAI_EMBEDDING_DIMENSIONS`
-
-Required for live read-only X polling:
-
-- `X_BEARER_TOKEN`
-- `X_USERNAME` or `X_USER_ID`
-
-Without `OPENAI_API_KEY`, the demo still works end-to-end using local heuristic drafting and lexical retrieval.
-
-With `OPENAI_API_KEY`, it also uses OpenAI for:
-
-- local help-doc embeddings
-- query rewriting
-- retrieval reranking
-- final draft generation
-
-## Notes
-
-- The bundled knowledge base is a full rendered snapshot of `https://cursor.com/help`.
-- Help docs are chunked by FAQ-style question boundaries when possible.
-- Billing and higher-touch issues route to `hi@cursor.com` instead of DM.
-- The output is intentionally built for a human support rep, not an autonomous bot.
-- Live X polling is wired for the official X API but intentionally not exercised in this repo. The demo stays fixture-backed and mockable until the `@cursorsupport` account is connected.
