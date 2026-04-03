@@ -8,7 +8,7 @@ I have seen [@ReplitSupport](https://x.com/ReplitSupport) out in the wild, but I
 
 If I were thinking about building a world-class support experience for Cursor, one metric I would care a lot about is time to first response.
 
-So I built a demo system around `@cursorsupport`, the X account I made for this idea.
+So I built a demo system around [`@CursorSupport`](https://x.com/CursorSupport), the X account I made for this idea.
 
 The idea is simple:
 
@@ -64,12 +64,12 @@ The system has all of `cursor.com/help` scraped locally and embedded so it can p
 - escalate to `hi@cursor.com`
 - avoid guessing when the docs are weak
 
-The live X integration is written against the official X API, but it is not connected to the real `@cursorsupport` account in this repo yet.
+The live X integration is written against the official X API, but it is not connected to the real [`@CursorSupport`](https://x.com/CursorSupport) account in this repo yet.
 
 ## What I Would Add Next
 
 - evals to check response quality across different support scenarios
-- connect the official X API to the real `@cursorsupport` account
+- connect the official X API to the real [`@CursorSupport`](https://x.com/CursorSupport) account
 - connect the Slack handoff to Cursor's actual Slack workspace
 - expand the knowledge base beyond `cursor.com/help` so more involved product questions can be answered
 
