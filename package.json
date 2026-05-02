@@ -7,7 +7,12 @@
   "scripts": {
     "kb:sync": "node --experimental-transform-types src/cli.ts kb:sync",
     "kb:seed-demo": "node --experimental-transform-types src/cli.ts kb:seed-demo",
+    "env:check": "node --experimental-transform-types src/cli.ts env:check",
+    "x:probe": "node --experimental-transform-types src/cli.ts x:probe",
+    "x:smoke": "node --experimental-transform-types src/cli.ts x:smoke",
+    "mentions:brief": "node --experimental-transform-types src/cli.ts mentions:brief",
     "mentions:poll": "node --experimental-transform-types src/cli.ts mentions:poll",
+    "mentions:reply": "node --experimental-transform-types src/cli.ts mentions:reply",
     "mentions:watch": "node --experimental-transform-types src/cli.ts mentions:watch",
     "demo:fixtures": "node --experimental-transform-types src/cli.ts demo:fixtures",
     "demo:final": "node --experimental-transform-types src/cli.ts demo:final",

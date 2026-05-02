@@ -1,4 +1,5 @@
 import { join } from "node:path";
+import { existsSync, readFileSync } from "node:fs";
 
 export interface AppConfig {
   rootDir: string;
@@ -19,6 +20,7 @@ export interface AppConfig {
   kbMaxRetries: number;
   xApiBaseUrl: string;
   xBearerToken: string | null;
+  xUserAccessToken: string | null;
   xUsername: string;
   xUserId: string | null;
   xPollIntervalMs: number;
@@ -33,7 +35,51 @@ export interface AppConfig {
   retrievalSemanticWeight: number;
 }
 
+function parseDotEnvValue(value: string): string {
+  const trimmed = value.trim();
+  if (
+    (trimmed.startsWith("\"") && trimmed.endsWith("\"")) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1);
+  }
+
+  return trimmed;
+}
+
+function loadDotEnv(env: NodeJS.ProcessEnv): NodeJS.ProcessEnv {
+  const rootDir = env.APP_ROOT || process.cwd();
+  const envPath = join(rootDir, ".env");
+  if (!existsSync(envPath)) {
+    return env;
+  }
+
+  const merged = { ...env };
+  const shellKeys = new Set(Object.keys(env));
+  const content = readFileSync(envPath, "utf8");
+  for (const line of content.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) {
+      continue;
+    }
+
+    const equalsIndex = trimmed.indexOf("=");
+    if (equalsIndex <= 0) {
+      continue;
+    }
+
+    const key = trimmed.slice(0, equalsIndex).trim().replace(/^export\s+/, "");
+    const value = parseDotEnvValue(trimmed.slice(equalsIndex + 1));
+    if (!shellKeys.has(key) && (!merged[key] || value)) {
+      merged[key] = value;
+    }
+  }
+
+  return merged;
+}
+
 export function loadConfig(env = process.env): AppConfig {
+  env = loadDotEnv(env);
   const rootDir = env.APP_ROOT || process.cwd();
   const dataDir = join(rootDir, "data");
 
@@ -58,6 +104,7 @@ export function loadConfig(env = process.env): AppConfig {
     kbMaxRetries: Number(env.KB_MAX_RETRIES || "3"),
     xApiBaseUrl: env.X_API_BASE_URL || "https://api.x.com/2",
     xBearerToken: env.X_BEARER_TOKEN || null,
+    xUserAccessToken: env.X_USER_ACCESS_TOKEN || null,
     xUsername: env.X_USERNAME || "cursorsupport",
     xUserId: env.X_USER_ID || null,
     xPollIntervalMs: Number(env.X_POLL_INTERVAL_MS || "60000"),

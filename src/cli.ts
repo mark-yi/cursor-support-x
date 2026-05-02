@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { loadConfig } from "./config.ts";
 import { seedDemoKnowledgeBase, syncKnowledgeBase } from "./kb/crawler.ts";
@@ -7,7 +8,13 @@ import type { SupportMention } from "./types.ts";
 import { fileExists, readJsonFile, writeJsonFile } from "./utils/fs.ts";
 import { slugify } from "./utils/text.ts";
 import { buildSupportPayload } from "./triage/pipeline.ts";
-import { fetchMentions, loadMentionsFromFixture } from "./x/api.ts";
+import {
+  createReply,
+  fetchMentions,
+  loadMentionsFromFixture,
+  probeXReadAccess,
+  smokeTestXReadAccess
+} from "./x/api.ts";
 import { buildMentionPermalink } from "./x/api.ts";
 
 interface FinalDemoCase {
@@ -52,8 +59,13 @@ function printUsage(): void {
 Commands:
   kb:sync                 Crawl official Cursor docs and pricing pages into data/kb
   kb:seed-demo            Seed a local demo knowledge base from fixture documents
+  env:check               Show safe diagnostics for required local env vars
+  x:probe                 Check individual X read endpoints for this token
+  x:smoke                 Verify X read credentials and mention access
+  mentions:brief          Build and print one Slack-ready support brief
   mentions:poll           Poll X mentions once, process them, and write Slack-ready JSON
   mentions:watch          Poll X mentions repeatedly using X_POLL_INTERVAL_MS
+  mentions:reply          Manually reply to an X mention after human approval
   demo:fixtures           Seed the demo KB and process the fixture mention payload
   demo:final              Seed the demo KB and generate the curated example outputs
   demo:message            Process one arbitrary mock mention and write Slack-ready JSON
@@ -61,9 +73,12 @@ Commands:
 Useful flags:
   --fixture <path>        Load mentions from a fixture file instead of live X
   --limit <n>             Limit how many new mentions are processed in one run
+  --new                   Only consider mentions newer than local state for mentions:brief
+  --save                  Save the generated payload JSON for mentions:brief
   --text <message>        Mock mention text for demo:message
   --handle <username>     Mock X handle for demo:message
   --id <id>               Mock tweet id for demo:message
+  --mention-id <id>       X post id to select or reply to
   --permalink <url>       Override generated post permalink for demo:message
 `);
 }
@@ -75,6 +90,7 @@ async function ensureKnowledgeBase(command: string): Promise<void> {
     if (
       command === "mentions:poll" ||
       command === "mentions:watch" ||
+      command === "mentions:brief" ||
       command === "demo:message" ||
       command === "demo:final"
     ) {
@@ -136,6 +152,52 @@ async function processMentionsOnce(options: Map<string, string | true>): Promise
   }
 
   await saveMentionState(config, applyProcessedMentions(state, freshMentions));
+}
+
+async function selectMentionForBrief(options: Map<string, string | true>): Promise<SupportMention | null> {
+  const text = getStringOption(options, "text");
+  if (text) {
+    return buildDemoMention(options);
+  }
+
+  const config = loadConfig();
+  const fixturePath = getStringOption(options, "fixture");
+  const mentionId = getStringOption(options, "mention-id");
+  const state = options.has("new") ? await loadMentionState(config) : null;
+  const mentions = await loadMentions(fixturePath, state?.lastSeenMentionId || null);
+
+  if (mentionId) {
+    return mentions.find((mention) => mention.id === mentionId) || null;
+  }
+
+  return mentions.at(-1) || null;
+}
+
+async function runMentionBrief(options: Map<string, string | true>): Promise<void> {
+  const config = loadConfig();
+  await ensureKnowledgeBase("mentions:brief");
+  const index = await loadSearchReadyKnowledgeIndex();
+  const mention = await selectMentionForBrief(options);
+
+  if (!mention) {
+    console.log("No matching mention found.");
+    return;
+  }
+
+  const payload = await buildSupportPayload(config, index, mention);
+
+  console.log("Slack-ready support brief");
+  console.log("");
+  console.log(payload.slack_message);
+  console.log("");
+  console.log(`triage: ${payload.triage.category} / ${payload.triage.priority}`);
+  console.log(`human review: ${payload.triage.needs_human_review ? "yes" : "no"}`);
+  console.log(`model: ${payload.model.provider}:${payload.model.model}`);
+
+  if (options.has("save")) {
+    const outputPath = await writePayload(payload, config.outputsDir, mention);
+    console.log(`saved payload: ${outputPath}`);
+  }
 }
 
 async function watchMentions(): Promise<void> {
@@ -229,6 +291,57 @@ async function runFinalDemo(): Promise<void> {
   }
 }
 
+async function replyToMention(options: Map<string, string | true>): Promise<void> {
+  const mentionId = getStringOption(options, "mention-id");
+  const text = getStringOption(options, "text");
+  if (!mentionId || !text) {
+    throw new Error("mentions:reply requires --mention-id and --text.");
+  }
+
+  const config = loadConfig();
+  const replyId = await createReply(config, mentionId, text);
+  console.log(`Posted reply ${replyId}`);
+}
+
+function runEnvCheck(): void {
+  const config = loadConfig();
+  const envPath = join(config.rootDir, ".env");
+  const token = config.xBearerToken || "";
+  const userAccessToken = config.xUserAccessToken || "";
+
+  console.log("Environment diagnostics");
+  console.log(`cwd: ${config.rootDir}`);
+  console.log(`.env exists: ${existsSync(envPath) ? "yes" : "no"}`);
+  console.log(`X_USERNAME: ${config.xUsername || "missing"}`);
+  console.log(`X_USER_ID set: ${config.xUserId ? "yes" : "no"}`);
+  console.log(`X_BEARER_TOKEN set: ${token ? "yes" : "no"}`);
+  console.log(`X_BEARER_TOKEN source: ${process.env.X_BEARER_TOKEN ? "shell" : token ? ".env" : "missing"}`);
+  console.log(`X_BEARER_TOKEN length: ${token.length}`);
+  console.log(`X_BEARER_TOKEN has Bearer prefix: ${/^Bearer\s+/i.test(token) ? "yes" : "no"}`);
+  console.log(`X_BEARER_TOKEN has surrounding whitespace: ${token && token !== token.trim() ? "yes" : "no"}`);
+  console.log(`X_USER_ACCESS_TOKEN set: ${userAccessToken ? "yes" : "no"}`);
+  console.log(`OPENAI_API_KEY set: ${config.openAIKey ? "yes" : "no"}`);
+}
+
+async function runXSmokeTest(): Promise<void> {
+  const config = loadConfig();
+  const result = await smokeTestXReadAccess(config);
+  console.log(`X read auth ok for @${config.xUsername}`);
+  console.log(`user id: ${result.userId}`);
+  console.log(`mentions returned: ${result.mentionCount}`);
+}
+
+async function runXProbe(): Promise<void> {
+  const config = loadConfig();
+  const probes = await probeXReadAccess(config);
+  for (const probe of probes) {
+    console.log(`${probe.ok ? "ok" : "fail"} ${probe.status} ${probe.name}`);
+    if (!probe.ok && probe.detail) {
+      console.log(`  ${probe.detail}`);
+    }
+  }
+}
+
 async function main(): Promise<void> {
   const { command, options } = parseArgs(process.argv.slice(2));
   const config = loadConfig();
@@ -244,11 +357,26 @@ async function main(): Promise<void> {
       console.log(`Seeded demo corpus with ${index.documents.length} documents.`);
       return;
     }
+    case "env:check":
+      runEnvCheck();
+      return;
+    case "x:probe":
+      await runXProbe();
+      return;
+    case "x:smoke":
+      await runXSmokeTest();
+      return;
+    case "mentions:brief":
+      await runMentionBrief(options);
+      return;
     case "mentions:poll":
       await processMentionsOnce(options);
       return;
     case "mentions:watch":
       await watchMentions();
+      return;
+    case "mentions:reply":
+      await replyToMention(options);
       return;
     case "demo:fixtures":
       await runFixtureDemo();

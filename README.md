@@ -18,6 +18,26 @@ The idea is simple:
 
 This repo does **not** auto-reply on X. It is meant to help a support team respond faster and more accurately.
 
+## Live X Test
+
+On May 2, 2026, I tested this with a real post to [`@CursorSupport`](https://x.com/CursorSupport):
+
+> [@CursorSupport I paid for Pro but Cursor still says I'm on the free plan. I already tried signing out and back in. Can someone help?](https://x.com/himarkyi/status/2050708722662650323)
+
+Running `npm run mentions:brief -- --save` produced a human-reviewable support brief in about 9.6 seconds:
+
+```text
+triage: billing/pricing / high
+human review: yes
+suggested action: route to a billing-support owner and ask the user to email hi@cursor.com with the account email and receipt/order info.
+suggested reply: Please email hi@cursor.com so the team can check your subscription and entitlement. Include the email you used for Cursor and your receipt/order info.
+sources: https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/pricing, https://cursor.com/help/account-and-billing/cancel
+```
+
+Full generated payload: [data/outputs/2026-05-02-himarkyi-2050708722662650323.json](data/outputs/2026-05-02-himarkyi-2050708722662650323.json)
+
+Flow: X mention -> Cursor docs retrieval -> `gpt-5.4-nano` draft -> Slack-ready brief -> human-approved reply.
+
 ## Example Outputs
 
 ### 1. Billing dispute
@@ -66,6 +86,8 @@ The system has all of `cursor.com/help` scraped locally and embedded so it can p
 
 The live X integration is written against the official X API, but it is not connected to the real [`@CursorSupport`](https://x.com/CursorSupport) account in this repo yet.
 
+With X's April 2026 pricing changes, the practical first pass is a read-only Free-tier flow with `X_BEARER_TOKEN`: fetch public posts that mention `@cursorsupport`, generate a Slack-ready brief, and keep replies human-approved. See [docs/x_live_setup.md](docs/x_live_setup.md) for the setup checklist, pricing notes, and manual reply command.
+
 ## What I Would Add Next
 
 - evals to check response quality across different support scenarios
@@ -84,4 +106,25 @@ If you want to run the demo locally:
 ```bash
 npm run kb:seed-demo
 npm run demo:final
+```
+
+To see exactly what happens when `@cursorsupport` gets a mention:
+
+```bash
+npm run mentions:brief -- --fixture fixtures/x/mentions-response.json
+```
+
+With a live read-only X Bearer token:
+
+```bash
+export X_BEARER_TOKEN=<bearer-token>
+export X_USERNAME=cursorsupport
+npm run x:probe
+npm run mentions:brief
+```
+
+For a human-approved live reply after reviewing a generated support brief:
+
+```bash
+npm run mentions:reply -- --mention-id <post-id> --text "<approved reply>"
 ```

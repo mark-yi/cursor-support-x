@@ -1,0 +1,175 @@
+{
+  "mention": {
+    "id": "2050708722662650323",
+    "text": "@CursorSupport I paid for Pro but Cursor still says I'm on the free plan. I already tried signing out and back in. Can someone help?",
+    "authorId": "1667246889006419968",
+    "authorHandle": "himarkyi",
+    "createdAt": "2026-05-02T22:47:14.000Z",
+    "permalink": "https://x.com/himarkyi/status/2050708722662650323",
+    "conversationId": "2050708722662650323",
+    "inReplyToUserId": "2039939448822231040"
+  },
+  "triage": {
+    "category": "billing/pricing",
+    "confidence": 0.82,
+    "priority": "high",
+    "needs_human_review": true,
+    "summary": "User paid for Cursor Pro but UI still shows free plan. Needs billing status verification; provided sources cover general billing management but not this specific sync/display mismatch."
+  },
+  "suggested_response": "Route to a human billing-support owner. Publicly avoid diagnosing from AI. Ask the user to email hi@cursor.com with: the email on their Cursor account and the purchase/receipt info (and optionally a screenshot of the plan banner). Check the subscription status on the account and reconcile any billing entitlement vs. plan display.",
+  "suggested_reply": "Please email hi@cursor.com so the team can check your subscription and entitlement—your account is still showing the Free plan after payment. Include the email you used for Cursor and (if you have it) your receipt/order info, plus a screenshot of the plan banner. We’ll get it corrected if the billing status didn’t sync properly.",
+  "sources": [
+    {
+      "title": "Billing and payments",
+      "url": "https://cursor.com/help/account-and-billing/billing",
+      "snippet": "witch between monthly and annual billing? Individual plans (Pro, Pro+, Ultra): Go to cursor.com/dashboard/billing Click Upgrade Now on the green banner at the top Teams plan: Go to cursor.com/dashboard Click Billing and...",
+      "relevanceScore": 59.06,
+      "relevanceReason": "Semantic match plus terms: pro, plan, billing.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Pricing and plans",
+      "url": "https://cursor.com/help/account-and-billing/pricing",
+      "snippet": "ols, and invoice billing. Contact sales to get started. All paid plans include unlimited Tab completions, all models, Cloud Agents, and Bugbot. Teams adds admin dashboard, centralized billing, and SSO. See cursor.com/pri...",
+      "relevanceScore": 59.36,
+      "relevanceReason": "Semantic match plus terms: paid, pro, free, plan.",
+      "sourceType": "pricing"
+    },
+    {
+      "title": "Cancel your subscription",
+      "url": "https://cursor.com/help/account-and-billing/cancel",
+      "snippet": "ens after I cancel my subscription? You keep access to your paid plan features until the end of your current billing period You won't be charged again after canceling After the billing period ends, your account reverts t...",
+      "relevanceScore": 52.5,
+      "relevanceReason": "Semantic match plus terms: paid, free, plan, billing.",
+      "sourceType": "pricing"
+    }
+  ],
+  "retrieval_debug": {
+    "rewritten_query": "billing pro free plan tried signing out back",
+    "retrieval_mode": "hybrid",
+    "semantic_weight": 0.65,
+    "rerank_attempted": true,
+    "rerank_changed_order": true,
+    "top_candidates_before_rerank": [
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "ols, and invoice billing. Contact sales to get started. All paid plans include unlimited Tab completions, all models, Cloud Agents, and Bugbot. Teams adds admin dashboard, centralized billing, and SSO. See cursor.com/pri...",
+        "relevanceScore": 59.36,
+        "relevanceReason": "Semantic match plus terms: paid, pro, free, plan.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "witch between monthly and annual billing? Individual plans (Pro, Pro+, Ultra): Go to cursor.com/dashboard/billing Click Upgrade Now on the green banner at the top Teams plan: Go to cursor.com/dashboard Click Billing and...",
+        "relevanceScore": 59.06,
+        "relevanceReason": "Semantic match plus terms: pro, plan, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "How much is the Enterprise plan? To get a quote, fill out the contact form at cursor.com/contact-sales.",
+        "relevanceScore": 52.73,
+        "relevanceReason": "Semantic match plus terms: plan, out, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "ens after I cancel my subscription? You keep access to your paid plan features until the end of your current billing period You won't be charged again after canceling After the billing period ends, your account reverts t...",
+        "relevanceScore": 52.5,
+        "relevanceReason": "Semantic match plus terms: paid, free, plan, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "ch on-demand usage you're willing to pay Upgrade your plan: Pro+ ($60/mo, $70 included) or Ultra ($200/mo, $400 included) give you a larger budget...",
+        "relevanceScore": 47.18,
+        "relevanceReason": "Semantic match plus terms: pro, plan, out.",
+        "sourceType": "pricing"
+      }
+    ],
+    "top_candidates_after_rerank": [
+      {
+        "title": "Billing and payments",
+        "url": "https://cursor.com/help/account-and-billing/billing",
+        "snippet": "witch between monthly and annual billing? Individual plans (Pro, Pro+, Ultra): Go to cursor.com/dashboard/billing Click Upgrade Now on the green banner at the top Teams plan: Go to cursor.com/dashboard Click Billing and...",
+        "relevanceScore": 59.06,
+        "relevanceReason": "Semantic match plus terms: pro, plan, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Pricing and plans",
+        "url": "https://cursor.com/help/account-and-billing/pricing",
+        "snippet": "ols, and invoice billing. Contact sales to get started. All paid plans include unlimited Tab completions, all models, Cloud Agents, and Bugbot. Teams adds admin dashboard, centralized billing, and SSO. See cursor.com/pri...",
+        "relevanceScore": 59.36,
+        "relevanceReason": "Semantic match plus terms: paid, pro, free, plan.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Cancel your subscription",
+        "url": "https://cursor.com/help/account-and-billing/cancel",
+        "snippet": "ens after I cancel my subscription? You keep access to your paid plan features until the end of your current billing period You won't be charged again after canceling After the billing period ends, your account reverts t...",
+        "relevanceScore": 52.5,
+        "relevanceReason": "Semantic match plus terms: paid, free, plan, billing.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Usage-based charges",
+        "url": "https://cursor.com/help/account-and-billing/overages",
+        "snippet": "ch on-demand usage you're willing to pay Upgrade your plan: Pro+ ($60/mo, $70 included) or Ultra ($200/mo, $400 included) give you a larger budget...",
+        "relevanceScore": 47.18,
+        "relevanceReason": "Semantic match plus terms: pro, plan, out.",
+        "sourceType": "pricing"
+      },
+      {
+        "title": "Enterprise billing",
+        "url": "https://cursor.com/help/account-and-billing/enterprise",
+        "snippet": "How much is the Enterprise plan? To get a quote, fill out the contact form at cursor.com/contact-sales.",
+        "relevanceScore": 52.73,
+        "relevanceReason": "Semantic match plus terms: plan, out, billing.",
+        "sourceType": "pricing"
+      }
+    ]
+  },
+  "slack_fields": {
+    "new_mention": "@CursorSupport I paid for Pro but Cursor still says I'm on the free plan. I already tried signing out and back in. Can someone help?",
+    "suggested_response": "Route to a human billing-support owner. Publicly avoid diagnosing from AI. Ask the user to email hi@cursor.com with: the email on their Cursor account and the purchase/receipt info (and optionally a screenshot of the plan banner). Check the subscription status on the account and reconcile any billing entitlement vs. plan display.",
+    "suggested_reply": "Please email hi@cursor.com so the team can check your subscription and entitlement—your account is still showing the Free plan after payment. Include the email you used for Cursor and (if you have it) your receipt/order info, plus a screenshot of the plan banner. We’ll get it corrected if the billing status didn’t sync properly.",
+    "link_to_post": "https://x.com/himarkyi/status/2050708722662650323",
+    "sources": "https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/pricing, https://cursor.com/help/account-and-billing/cancel"
+  },
+  "slack_message": "new mention: @CursorSupport I paid for Pro but Cursor still says I'm on the free plan. I already tried signing out and back in. Can someone help?\nsuggested response: Route to a human billing-support owner. Publicly avoid diagnosing from AI. Ask the user to email hi@cursor.com with: the email on their Cursor account and the purchase/receipt info (and optionally a screenshot of the plan banner). Check the subscription status on the account and reconcile any billing entitlement vs. plan display.\nsuggested reply: Please email hi@cursor.com so the team can check your subscription and entitlement—your account is still showing the Free plan after payment. Include the email you used for Cursor and (if you have it) your receipt/order info, plus a screenshot of the plan banner. We’ll get it corrected if the billing status didn’t sync properly.\n\nlink to post: https://x.com/himarkyi/status/2050708722662650323\nsources: https://cursor.com/help/account-and-billing/billing, https://cursor.com/help/account-and-billing/pricing, https://cursor.com/help/account-and-billing/cancel",
+  "fallback": {
+    "reason": "The available Cursor help sources cover general pricing/billing management, but they don’t provide a doc-backed fix for a ‘paid but still shows free’ plan-display mismatch.",
+    "likely_issue_areas": [
+      "billing/pricing",
+      "account/access",
+      "entitlement sync/display mismatch"
+    ],
+    "manual_next_step": "Escalate to billing support via hi@cursor.com and request only the account email + minimal proof of purchase; then verify and reconcile the subscription/entitlement status for that account."
+  },
+  "sop_tags": [
+    "billing/pricing",
+    "high",
+    "escalation required",
+    "stay-on-x",
+    "no sensitive info in public reply",
+    "human-in-the-loop",
+    "route to hi@cursor.com"
+  ],
+  "timing": {
+    "processed_at": "2026-05-02T23:08:03.368Z",
+    "retrieval_ms": 3988,
+    "model_ms": 5599,
+    "total_ms": 9590
+  },
+  "model": {
+    "provider": "openai",
+    "model": "gpt-5.4-nano",
+    "mode": "openai-responses"
+  }
+}
