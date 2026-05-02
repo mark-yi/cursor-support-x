@@ -84,24 +84,34 @@ The system has all of `cursor.com/help` scraped locally and embedded so it can p
 - escalate to `hi@cursor.com`
 - avoid guessing when the docs are weak
 
-The live X integration is written against the official X API, but it is not connected to the real [`@CursorSupport`](https://x.com/CursorSupport) account in this repo yet.
+The live X integration is written against the official X API and is configured for the real [`@CursorSupport`](https://x.com/CursorSupport) account. It can poll mentions from X, normalize them into the same support workflow as the fixtures, and write Slack-ready JSON for human review.
+
+It still does **not** auto-reply on X.
 
 With X's April 2026 pricing changes, the practical first pass is a read-only Free-tier flow with `X_BEARER_TOKEN`: fetch public posts that mention `@cursorsupport`, generate a Slack-ready brief, and keep replies human-approved. See [docs/x_live_setup.md](docs/x_live_setup.md) for the setup checklist, pricing notes, and manual reply command.
 
 ## What I Would Add Next
 
-- evals to check response quality across different support scenarios
-- connect the official X API to the real [`@CursorSupport`](https://x.com/CursorSupport) account
 - connect the Slack handoff to Cursor's actual Slack workspace
 - expand the knowledge base beyond `cursor.com/help` so more involved product questions can be answered
+- add broader evals around live mention categories, escalation decisions, and reply quality
 
 ## Repo
 
 - [mark_thinking.md](mark_thinking.md)
 - [docs/support_sop.md](docs/support_sop.md)
+- [docs/x_live_setup.md](docs/x_live_setup.md)
 - [examples/README.md](examples/README.md)
 
-If you want to run the demo locally:
+The repo is dependency-light and uses Node's built-in test runner. Use Node 22+ because the scripts rely on `node --experimental-transform-types`.
+
+Run the automated tests:
+
+```bash
+npm test
+```
+
+Regenerate the checked-in demo outputs from bundled fixtures:
 
 ```bash
 npm run kb:seed-demo
@@ -114,13 +124,26 @@ To see exactly what happens when `@cursorsupport` gets a mention:
 npm run mentions:brief -- --fixture fixtures/x/mentions-response.json
 ```
 
+Process the bundled X mentions fixture through the normal saved-output pipeline:
+
+```bash
+npm run demo:fixtures
+```
+
+Test one arbitrary mock mention without touching X:
+
+```bash
+npm run demo:message -- --text "@cursorsupport where do I check pricing?" --handle mockuser
+```
+
 With a live read-only X Bearer token:
 
 ```bash
 export X_BEARER_TOKEN=<bearer-token>
 export X_USERNAME=cursorsupport
+npm run env:check
 npm run x:probe
-npm run mentions:brief
+npm run mentions:brief -- --save
 ```
 
 For a human-approved live reply after reviewing a generated support brief:
@@ -128,3 +151,19 @@ For a human-approved live reply after reviewing a generated support brief:
 ```bash
 npm run mentions:reply -- --mention-id <post-id> --text "<approved reply>"
 ```
+
+For batch polling instead of a single brief:
+
+```bash
+npm run mentions:poll -- --limit 5
+```
+
+For repeated polling:
+
+```bash
+npm run mentions:watch
+```
+
+Live runs write generated handoff payloads to `data/outputs/` and track processed mentions in `data/mentions-state.json`. The `data/` directory and `.env` are intentionally gitignored.
+
+The CLI reads environment variables from the shell and also loads `.env` automatically. Shell values win when both are present.
